@@ -5,10 +5,7 @@ class App:
         #initalizing blob
         blob = Blob("blob", 10)
         print(blob.die_value)
-        blob.roll_die()
-        print(blob.die_value)
-        blob.adjust_size()
-
+        blob.roll_areadie()
         print(blob)
 
         # blob rolls a die to determine whether it grows or shrinks
