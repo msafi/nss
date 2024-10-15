@@ -5,14 +5,15 @@ from die import Die
 # blob class
 class Blob:
     die = Die(3)
-    areadie = Die(100)
+    area_die = Die(100)
 
     def __init__(self, name, size):
-        self.die_value = self.die.roll()
         self.name = name
-        self.areadie_value = self.areadie.roll
-        # hibity hopity
-        if self.areadie_value == 1:
+
+        self.roll_die()
+        self.roll_area_die()
+
+        if self.die_value == 1:
             self.size = size - 1
         elif self.die_value == 2:
             self.size = size
@@ -28,15 +29,18 @@ class Blob:
     def roll_die(self):
         self.die_value = self.die.roll()
 
-    def roll_areadie(self):
-        self.areadie_value = self.areadie.roll
+    def roll_area_die(self):
+        self.area_die_value = self.area_die.roll()
+
+    #   # def food_check(self):
+    #        if self.area_die.roll() < food_amount + 1:
 
     def __str__(self):
         return (
-            f"Blob(name={self.name}, size={self.size}, location={self.areadie_value})"
+            f"Blob(name={self.name}, size={self.size}, location={self.area_die_value})"
         )
 
-    def adjust_size(self):
+    def agust_size(self):
         if self.die_value == 1:
             self.size = self.size - 1
         elif self.die_value == 2:
