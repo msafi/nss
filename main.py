@@ -1,10 +1,12 @@
 from blob import Blob
+from goobmeld import Goobmeld
 
 
 class App:
     def __init__(self):
         # initalizing blob
-        blob = Blob("blob", 10)
+        goobmeld = Goobmeld(25)
+        blob = Blob("blob", 10, goobmeld)
         print(blob.die_value)
         blob.roll_area_die()
         print(blob)

@@ -1,5 +1,6 @@
 # import threeSidedDie from die.py
 from die import Die
+from goobmeld import Goobmeld
 
 
 # blob class
@@ -7,9 +8,10 @@ class Blob:
     die = Die(3)
     area_die = Die(100)
 
-    def __init__(self, name, size):
+    def __init__(self, name, size, takethatfutureme):
         self.name = name
 
+        self.andthistoofutureme = takethatfutureme
         self.roll_die()
         self.roll_area_die()
 
@@ -32,8 +34,8 @@ class Blob:
     def roll_area_die(self):
         self.area_die_value = self.area_die.roll()
 
-    #   # def food_check(self):
-    #        if self.area_die.roll() < food_amount + 1:
+    # def food_check(self):
+    #        if self.area_die.roll() < self.andthistoofutureme.food_amount + 1:
 
     def __str__(self):
         return (
