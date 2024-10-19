@@ -10,7 +10,6 @@ class Blob:
 
     def __init__(self, name, size, takethatfutureme):
         self.name = name
-
         self.andthistoofutureme = takethatfutureme
         self.roll_die()
         self.roll_area_die()
@@ -49,3 +48,6 @@ class Blob:
             self.size = self.size
         else:
             self.size = self.size + 1
+
+    def CONSUME_GOOBMELD(self):
+        self.andthistoofutureme.food_amount = self.andthistoofutureme.food_amount - 1
