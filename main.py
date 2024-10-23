@@ -1,22 +1,42 @@
 from blob import Blob
+from environment import Environment
 from goobmeld import Goobmeld
 
 
 class App:
     def __init__(self):
+
+        # goobmeld = Goobmeld(25)
+
+        environment = Environment(25)
+
+        environment.create_blob("blob", 10)
+
+        print(environment)
+        environment.print_blobs()
         # initalizing blob
-        goobmeld = Goobmeld(25)
-        blob = Blob("blob", 10, goobmeld)
-        print(blob.die_value)
-        blob.roll_area_die()
-        print(blob)
-        print(goobmeld)
-        print("THE NEXT ROUND!")
-        blob.CONSUME_GOOBMELD()
-        print(goobmeld)
-        # blob rolls a die to determine whether it grows or shrinks
-        # blob rolls die
-        # we print new blob size
+        # blob = Blob("blob", 10, goobmeld)
+        # blob2 = Blob("blob2", 20, goobmeld)
+
+        # list_of_blobs = [blob, blob2]
+
+        # # iterate over the list of blobs and print them
+        # for b in list_of_blobs:
+        #     print(b)
+
+        # # # filter out blobs that have a size larger than 5
+        # # large_blobs = [b for b in list_of_blobs if b.size > 5]
+
+        # print(blob.die_value)
+        # blob.roll_area_die()
+        # print(blob)
+        # print(goobmeld)
+        # print("THE NEXT ROUND!")
+        # blob.CONSUME_GOOBMELD()
+        # print(goobmeld)
+        # # blob rolls a die to determine whether it grows or shrinks
+        # # blob rolls die
+        # # we print new blob size
 
 
 # initialize app

@@ -8,9 +8,9 @@ class Blob:
     die = Die(3)
     area_die = Die(100)
 
-    def __init__(self, name, size, takethatfutureme):
+    def __init__(self, name, size, environment):
         self.name = name
-        self.andthistoofutureme = takethatfutureme
+        self.environment = environment
         self.roll_die()
         self.roll_area_die()
 
@@ -33,6 +33,8 @@ class Blob:
     def roll_area_die(self):
         self.area_die_value = self.area_die.roll()
 
+    # def mitosis(self):
+
     # def food_check(self):
     #        if self.area_die.roll() < self.andthistoofutureme.food_amount + 1:
 
@@ -49,5 +51,5 @@ class Blob:
         else:
             self.size = self.size + 1
 
-    def CONSUME_GOOBMELD(self):
-        self.andthistoofutureme.food_amount = self.andthistoofutureme.food_amount - 1
+    # def CONSUME_GOOBMELD(self):
+    #     self.andthistoofutureme.food_amount = self.andthistoofutureme.food_amount - 1
