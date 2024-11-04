@@ -39,9 +39,7 @@ class Blob:
     #        if self.area_die.roll() < self.andthistoofutureme.food_amount + 1:
 
     def __str__(self):
-        return (
-            f"Blob(name={self.name}, size={self.size}, location={self.area_die_value})"
-        )
+        return f"{self.name}(name={self.name}, size={self.size})"
 
     def agust_size(self):
         if self.die_value == 1:

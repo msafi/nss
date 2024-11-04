@@ -1,19 +1,16 @@
 from blob import Blob
 from environment import Environment
-from goobmeld import Goobmeld
 
 
 class App:
     def __init__(self):
 
-        # goobmeld = Goobmeld(25)
-
         environment = Environment(25)
 
-        environment.create_blob("blob", 10)
+        environment.create_blob(name="blob", size=10)
+        environment.create_blob(name="blob2", size=12)
 
         print(environment)
-        environment.print_blobs()
         # initalizing blob
         # blob = Blob("blob", 10, goobmeld)
         # blob2 = Blob("blob2", 20, goobmeld)
