@@ -11,6 +11,8 @@ class App:
         environment.create_blob(name="blob2", size=12)
 
         print(environment)
+
+        environment.begin()
         # initalizing blob
         # blob = Blob("blob", 10, goobmeld)
         # blob2 = Blob("blob2", 20, goobmeld)

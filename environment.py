@@ -21,6 +21,15 @@ class Environment:
         blob_tuple = (blob, blob_cell_index)
         self.blobs.append(blob_tuple)
 
+    def begin(self):
+        """
+        This method is called when the simulation begins
+        """
+        # for each blob, run .eat() method
+        for blob_tuple in self.blobs:
+            blob = blob_tuple[0]
+            blob.eat()
+
     def print_blobs(self):
         for blob in self.blobs:
             print(blob)
@@ -29,8 +38,9 @@ class Environment:
         number_of_blobs = f"Number of blobs: {len(self.blobs)}\n\n"
 
         cells_with_food = f"Cells with food: {self.cells_with_food}\n\n"
+        cells = f"Cells: {self.cells}\n\n"
 
         blobs_str = ", ".join(str(blob_tuple[0]) for blob_tuple in self.blobs)
         blobs = f"Blobs: {blobs_str}\n\n"
 
-        return number_of_blobs + cells_with_food + blobs
+        return number_of_blobs + cells_with_food + blobs + cells
