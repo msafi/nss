@@ -1,38 +1,25 @@
-#import threeSidedDie from die.py
-from die import Die
+from debug_log import log
+
 
 # blob class
 class Blob:
-    die = Die(3)
+    def __init__(self, name, size, environment):
+        log(f'Blob "{name}" initialized, size={size}')
 
-    def __init__(self, name, size):
-        self.die_value = self.die.roll()
         self.name = name
+        self.environment = environment
+        self.size = size
 
-        if self.die_value == 1:
-            self.size = size - 1
-        elif self.die_value == 2:
-            self.size = size
+    def eat(self):
+        log(f'Blob "{self.name}" wants to eat')
+        blob_cell = self.environment.get_blob_cell(self)
+
+        if blob_cell in self.environment.cells_with_food:
+            self.size += 1
+            log(f'Blob "{self.name}" ate and grew to size {self.size}')
         else:
-            self.size = size + 1
-
-    def grow(self, amount):
-        self.size += amount
-
-    def shrink(self, amount):
-        self.size = max(0, self.size - amount)
-
-    def roll_die(self):
-        self.die_value = self.die.roll()
+            self.size -= 1
+            log(f'Blob "{self.name}" did not eat and shrunk to size {self.size}')
 
     def __str__(self):
-        return f"Blob(name={self.name}, size={self.size})"
-    def adjust_size(self):
-        if self.die_value == 1:
-            self.size = self.size - 1
-        elif self.die_value == 2:
-            self.size = self.size
-        else:
-            self.size = self.size + 1
-
-
+        return f"{self.name}(name={self.name}, size={self.size})"
