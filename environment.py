@@ -34,6 +34,11 @@ class Environment:
         for blob in self.blobs:
             print(blob)
 
+    def get_blob_cell(self, blob):
+        for blob_tuple in self.blobs:
+            if blob_tuple[0] == blob:
+                return blob_tuple[1]
+
     def __str__(self):
         number_of_blobs = f"Number of blobs: {len(self.blobs)}\n\n"
 

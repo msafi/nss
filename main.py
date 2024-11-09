@@ -1,16 +1,16 @@
 from blob import Blob
+from debug_log import log
 from environment import Environment
 
 
 class App:
     def __init__(self):
+        log("App initialized")
 
         environment = Environment(25)
 
         environment.create_blob(name="blob", size=10)
         environment.create_blob(name="blob2", size=12)
-
-        print(environment)
 
         environment.begin()
         # initalizing blob
